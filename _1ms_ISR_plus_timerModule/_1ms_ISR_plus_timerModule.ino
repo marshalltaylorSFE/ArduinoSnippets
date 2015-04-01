@@ -42,6 +42,8 @@ void setup()
   sei();
 }
 
+int i = 0;
+int intervalSeed = 20;
 void loop()
 {
   // main program
@@ -63,7 +65,16 @@ void loop()
   {
     digitalWrite( LEDPIN, digitalRead(LEDPIN) ^ 1 );
   }
+  i++;
+  delay(1);
+  if(i > 100)
+  {
+    i = 0;
+    msTimerA.setInterval(intervalSeed);
+    intervalSeed++;
+    msTimerB.setInterval(intervalSeed);
 
+  }
 
 }
 

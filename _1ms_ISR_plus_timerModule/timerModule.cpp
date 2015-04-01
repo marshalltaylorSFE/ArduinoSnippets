@@ -62,3 +62,9 @@ int TimerClass::flagStatus()
 
 }
 
+void TimerClass::setInterval( uint16_t msLength )
+{
+  interval = msLength;
+  
+}
+

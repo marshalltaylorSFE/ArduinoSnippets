@@ -32,7 +32,8 @@ public:
     TimerClass( int );
     void update( uint16_t msTicksInput );
     int flagStatus( void );
-
+    void setInterval( uint16_t msLength );
+    
 };
 
 #endif // FILE_H_INCLUDED
