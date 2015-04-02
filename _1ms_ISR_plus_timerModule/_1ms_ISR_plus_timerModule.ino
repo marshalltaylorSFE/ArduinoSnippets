@@ -1,8 +1,23 @@
-// Arduino timer CTC interrupt example
+//**********************************************************************//
+//  BEERWARE LICENSE
 //
-// avr-libc library includes
-//#include <avr/io.h>
-//#include <avr/interrupt.h>
+//  This code is free for any use provided that if you meet the author
+//  in person, you buy them a beer.
+//
+//  This license block is BeerWare itself.
+//
+//  Written by:  Marshall Taylor
+//  Created:  March 21, 2015
+//
+//**********************************************************************//
+
+//HOW TO OPERATE
+//  Make TimerClass objects for each thing that needs periodic service
+//  pass the interval of the period in ticks
+//  Set MAXINTERVAL to the max foreseen interval of any TimerClass
+//  Set MAXTIMER to overflow number in the header.  MAXTIMER + MAXINTERVAL
+//    cannot exceed variable size.
+
 #define LEDPIN 13
 #include "timerModule.h"
 #include "stdint.h"
