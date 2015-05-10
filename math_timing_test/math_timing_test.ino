@@ -43,7 +43,7 @@ void loop()
   Serial.println("\nFirst running an increment only test.\n");
 
   Serial.println("ms_ticks cleared.");
-  float accumulator = 0;
+  volatile float accumulator = 0;
   ms_ticks = 0;
   for( long i = 0; i < 100000; i++ )
   {
@@ -97,12 +97,18 @@ void loop()
   //{
     //Serial.println("ok,");
     ms_ticks = 0;
+    volatile uint8_t maxAmp = 255;
+    volatile uint16_t timeVar = 500;
+    volatile uint16_t timeScale = 1000;
+    volatile int8_t powerScale = -62;
+
     for( long i = 0; i < 1000; i++ )
     {
       x++;
-      accumulator = pow(((float)x/1000), (exp((2*-64)/127)))*255;
+      accumulator = (uint16_t)(maxAmp*(float)pow(((float)timeVar/(float)timeScale), (exp((double)2*(float)powerScale/127))));
       analogWrite(11, accumulator);
     }
+    volatile float debugTemp = (exp((double)2*(float)powerScale/127));
   //}
   Serial.println("1000 cycles, captain.");
   Serial.print("Job took ");
@@ -115,6 +121,7 @@ void loop()
   Serial.print((float)1000000/(float)ms_ticks);
   Serial.println("Hz.");
   Serial.print("Debug chaff: ");
+  Serial.print(accumulator, 4);
   Serial.print(accumulator, 4);
   Serial.println(".");    
 
