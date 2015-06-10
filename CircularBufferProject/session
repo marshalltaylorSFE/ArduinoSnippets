@@ -1,0 +1,11 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="483" startPos="53" endPos="53" selMode="0" lang="C++" encoding="-1" filename="D:\github\ArduinoSnippits\CircularBufferProject\CircularBufferProject.ino" />
+        </mainView>
+        <subView activeIndex="1">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="832" startPos="690" endPos="690" selMode="0" lang="C++" encoding="-1" filename="D:\github\ArduinoSnippits\CircularBufferProject\CircularBuffer.cpp" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="832" startPos="688" endPos="688" selMode="0" lang="C++" encoding="-1" filename="D:\github\ArduinoSnippits\CircularBufferProject\CircularBuffer.h" />
+        </subView>
+    </Session>
+</NotepadPlus>
