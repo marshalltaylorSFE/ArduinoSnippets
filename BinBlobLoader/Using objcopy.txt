@@ -1,0 +1,33 @@
+Following instructions in "https://balau82.wordpress.com/2012/02/19/linking-a-binary-blob-with-gcc/"
+
+During arduino compile, this shows up
+
+D:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avr-objcopy -O ihex -R .eeprom C:\Users\Marshall\AppData\Local\Temp\build3810215813916743184.tmp/arenaDebugger.cpp.elf C:\Users\Marshall\AppData\Local\Temp\build3810215813916743184.tmp/arenaDebugger.cpp.hex 
+
+We'll use
+
+"D:\Program Files (x86)\Arduino\hardware\tools\avr\bin\avr-objcopy.exe" -I binary -O elf32-avr -B avr "D:\github\ArduinoSnippits\BinBlobLoader\SourceBlob.bin" "D:\github\ArduinoSnippits\BinBlobLoader\blob.o" 
+
+Given a bunch of hex data, I got this blob.o file:
+
+SYMBOL TABLE:
+00000000 l    d  .data  00000000 .data
+00000000 g       .data  00000000 _binary_D__github_ArduinoSnippits_BinBlobLoader_SourceBlob_bin_start
+00000020 g       .data  00000000 _binary_D__github_ArduinoSnippits_BinBlobLoader_SourceBlob_bin_end
+00000020 g       *ABS*  00000000 _binary_D__github_ArduinoSnippits_BinBlobLoader_SourceBlob_bin_size
+
+Using objdump:
+
+"D:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avr-objdump" -t "D:\github\ArduinoSnippits\BinBlobLoader\blob.o"
+
+produces
+
+
+
+
+
+
+
+
+
+"D:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avr-objdump" -t "C:\Users\Marshall\AppData\Local\Temp\build2469578494272951001.tmp\blob.o"
